@@ -1,4 +1,4 @@
-import './Register.css'
+import './Usuario.css'
 import React, { useState } from 'react';
 
 const Registro: React.FC = () => {
@@ -28,7 +28,7 @@ const Registro: React.FC = () => {
     return (
         <div className='Registro'>
             <h2>REGISTRO</h2>
-            <div className="formuPrincipal">
+            <div className="formRegistro">
                 <form onSubmit={handleSubmit}>
                     <input className='campos' type="text" name="nombre" value={formulario.nombre} onChange={handleChange} placeholder="Nombre" />
                     <input className='campos' type="text" name="apellido" value={formulario.apellido} onChange={handleChange} placeholder="Apellido" />

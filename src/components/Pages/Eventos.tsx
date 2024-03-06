@@ -1,7 +1,7 @@
 import './Eventos.css';
 import { Evento } from "../Eventos/Evento";
 
-export default function Landing() {
+export default function Eventos() {
 	return (
 		<div className="eventos">
 			<Evento evento="Recital1" fecha="10/08/24" horario="18hs"  />

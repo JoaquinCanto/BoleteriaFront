@@ -1,15 +1,17 @@
 header{
 	width: 100%;
 	display: flex;
+	flex-direction: row;
 	justify-content: space-between;
 	align-items: center;
+	padding-top: 0.5rem;
 }
 
 .logo{
 	display: flex;
 	max-width: 111px;
 	max-height: 65px;
-	padding-left: 10px;
+	margin-left: 2rem;
 }
 
 nav{
@@ -17,13 +19,17 @@ nav{
 }
 
 ul{
-	/* list-style: none; */
 	display: flex;
+	align-items: center;
 	padding: 0px;
 	gap: 20px
 }
+ul li{
+	display: flex;
+	justify-content: center;
+}
 
-nav .vLine{
+nav .verticalSeparator{
 	height: 30px;
 	border-left: 1px #5c2be2 solid;
 }
@@ -36,16 +42,28 @@ nav .vLine{
 	height: 52px;
 	width: 52px;
 	border-radius: 100%;
+	border: none;
+
+	color: #ffffff;
+	background-color: #5c2be2;
+	/* background-color: #0e6e02; */
+	margin-right: 2rem;
+}
+
+.btnSedes{
+	font-size: medium;
+	font-weight: 300;
+	padding: 5px;
 
 	color: #ffffff;
 	border: none;
-	background-color: #5c2be2;
-	/* background-color: #0e6e02; */
+	background-color: inherit; 
 }
 
 .imgUsuario{
-	height: 50px;
 	width: 50px;
+	height: 50px;
+	padding-top: 0px;
 }
 
 .btnUsuario:hover {
@@ -57,11 +75,34 @@ nav .vLine{
 	justify-content: flex-end;
 	padding-right: 10px;
 }
-.DropDown{
-	display: flex;
-	justify-content: flex-end;
-}
 
 .options{
 	background-color: #5c2be2;
+}
+
+.usuarioDropDown{
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-content: flex-start;
+	gap: 0.25rem;
+	border: 1px solid #ffffff;
+	position: absolute;
+	background-color: #000000;
+	margin-top: 4rem;
+	margin-right: 2rem;
+	padding: 0.25rem;
+}
+
+.sedesDropDown{
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-content: flex-start;
+	gap: 0.25rem;
+	border: 1px solid #ffffff;
+	position: absolute;
+	background-color: #000000;
+	margin-top: 3rem;
+	padding: 0.25rem;
 }

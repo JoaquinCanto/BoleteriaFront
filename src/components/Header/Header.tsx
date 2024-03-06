@@ -5,8 +5,9 @@ import DropDown from '../DropDown/DropDown'
 import { Link } from 'react-router-dom';
 
 export function Header(){
+	const sedes = ["Gigante", "Monumental"];
 	const opciones = ["Ingresar", "Registrarse"];
-	
+
 	return(
 		<>
 			<header className="">
@@ -14,19 +15,16 @@ export function Header(){
 				<nav className="">
 					<ul>
 						<li><Link to={"/"}>Eventos</Link></li>
-						<div className="vLine"></div>
-						<li><Link to="/sedes">Sedes</Link></li>
-						<div className="vLine"></div>
-						<li><Link to="">Nosotros</Link></li>
-						<div className="vLine"></div>
-						<li><Link to="">Soporte</Link></li>
+						<div className="verticalSeparator"></div>
+						<li><DropDown btnClass="btnSedes" text="Sedes" img="" imgClass="" options={sedes} panelClass="sedesDropDown"/></li>
+						<div className="verticalSeparator"></div>
+						<li><Link to={"/nosotros"}>Nosotros</Link></li>
+						<div className="verticalSeparator"></div>
+						<li><Link to={"/Soporte"}>Soporte</Link></li>
 					</ul>
 				</nav>
 				<div className="usuario">
-					{/* <button className="btnUsuario">
-						<img className="imgUsuario" src={user} alt="usuario"></img>
-					</button> */}
-					<DropDown classname='btnUsuario' text="" img={user} imgClass='imgUsuario' options={opciones} />
+					<DropDown btnClass='btnUsuario' text="" img={user} imgClass='imgUsuario' options={opciones}  panelClass="usuarioDropDown"/>
 				</div>
 			</header>
 			<div className='divider'></div>

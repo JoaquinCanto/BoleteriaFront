@@ -1,12 +1,6 @@
-.panel{
-	display: flex;
-	flex-direction: column;
-	border: 1px solid #ffffff;
-	position: absolute;
-	margin-top: 70px;
-	background-color: #000000;
+.option{
+	padding: 0.15rem;
 }
-
 .option:hover{
 	background-color: #ff0000;
 }

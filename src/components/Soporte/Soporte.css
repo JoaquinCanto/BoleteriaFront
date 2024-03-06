@@ -1,0 +1,17 @@
+.Soporte {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+label,input,textarea{
+    width: 100%;
+    text-align: left;
+    margin-bottom: 20px; /* Espacio entre los campos */
+}
+
+.btn {
+    margin-top: 10px;
+}

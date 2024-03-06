@@ -1,0 +1,15 @@
+.Sede1 {
+    width: 100%;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+p{
+    width: 40%;
+    text-align: justify;
+}
+img{
+    width: 40%;
+}

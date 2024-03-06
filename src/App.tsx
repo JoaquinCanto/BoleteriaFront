@@ -1,15 +1,28 @@
 import './App.css'
-import { Header } from './components/Header/Header'
-import { Footer } from './components/Footer/Footer'
-import { Evento } from './components/Eventos/Eventos'
+import { BrowserRouter, Route, Routes } from 'react-router-dom'
+import Landing from './components/Pages/Eventos'
+import NotLanding from './components/Pages/NotLanding'
+import { Layout } from './components/Pages/Layout'
+import LogIn from './components/Usuarios/LogIn'
+import Register from './components/Usuarios/Register'
+import Usuario from './components/Usuarios/Usuario'
+
 
 function App() {
 	return (
 	<>
-		<Header />
-		<Evento evento='Recital 1' fecha="10/04/24" horario="18hs"/>
-		{/* <Main /> */}
-		<Footer />
+		<BrowserRouter>
+			<Routes>
+				<Route element={<Layout/>}>
+					<Route path='/' element={<Landing/>} />
+					<Route path='/not' element={<NotLanding/>} />
+					<Route path='/ingresar' element={<LogIn/>} />
+					<Route path='/registrarse' element={<Register/>} />
+					<Route path='/usuario' element={<Usuario/>} />
+
+				</Route>
+			</Routes>
+		</BrowserRouter>
 	</>
 	)
 }

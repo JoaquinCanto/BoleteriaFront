@@ -1,4 +1,4 @@
-.Registro, .LogIn{
+.registro, .LogIn{
     width: 100%;
     text-align: center;
     display: flex;
@@ -8,22 +8,38 @@
 }
 
 .formRegistro{
-    width: 30%;
-    padding: 20px; /* Agrega un poco de espacio alrededor del formulario */
+    width: 20rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+    gap: 1.5rem;
 }
 
-.campos{
-    width: 100%;
-    margin-bottom: 20px; /* Espacio entre los campos */
+.label{
+    width: 20rem;
+    display: flex;
+    justify-content: flex-start;
+    margin-bottom: 0.25rem;
+    
 }
 
-button{
-    padding: 10px;
+.error{
+    width: 20rem;
+
+    display: flex;
+    margin-top: 0.25rem;
+}
+
+.btnRegistrarse{
+    width: auto;
+    padding: 0.3rem;
 }
 
 .formLogIn{
     width: 30%;
-    padding: 20px; /* Agrega un poco de espacio alrededor del formulario */
+    
     display: flex;
     flex-direction: column;
     align-items: center;

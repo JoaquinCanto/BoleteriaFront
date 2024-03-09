@@ -1,13 +1,23 @@
 import './Evento.css'
 
-export function Evento({evento, fecha, horario}: {evento: string, fecha: string, horario: string}){
+interface propTypes{
+	evento: string,
+	fecha: string,
+	horario: string,
+	descripcion: string
+}
+
+export function Evento(props: propTypes){
 	return(
 		<div className="evento">
 			<div className="eventoText">
-				<span className='eventoNombre' >{evento}</span>
+				<span className='eventoNombre' >{props.evento}</span>
 				<div className="fechaHorario">
-					<span className="Fecha">{fecha}</span>
-					<span className="Horario">{horario}</span>
+					<span className="Fecha">{props.fecha}</span>
+					<span className="Horario">{props.horario}</span>
+				</div>
+				<div>
+					{props.descripcion}
 				</div>
 			</div>
 			<img className="imgRecital" src="" alt="Imagen Recital"/>

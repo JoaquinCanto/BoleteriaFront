@@ -1,0 +1,64 @@
+.renglon {
+	width: 100%;
+	display: flex;
+	flex-direction: row;
+	justify-content: center;
+	align-items: center;
+
+}
+
+.renglonNombre,
+.renglonBanda,
+.renglonFecha,
+.renglonHora,
+.renglonDescripcion {
+	display: flex;
+	align-items: center;
+	padding: 0.25rem;
+	border: 0.0625rem solid #ffffff;
+	border-collapse: collapse;
+	background-color: #3d3838;
+}
+
+.renglonNombre {
+	min-width: 13rem;
+	/* background-color: blue; */
+}
+
+.renglonBanda {
+	min-width: 10rem;
+	/* background-color: red; */
+}
+
+.renglonFecha {
+	min-width: 6rem;
+	justify-content: center;
+	/* background-color: green; */
+}
+
+.renglonHora {
+	min-width: 3rem;
+	justify-content: center;
+	/* background-color: violet; */
+}
+
+.renglonDescripcion {
+	min-width: 25rem;
+	max-width: 25rem;
+	/* background-color: orange; */
+}
+
+.botones {
+	display: flex;
+	flex-direction: row;
+	justify-content: center;
+	align-items: center;
+	gap: 0.25rem;
+	margin-left: 0.25rem;
+	/* border: 0.0625rem solid #ffffff; */
+}
+
+.btn {
+	/* display: flex; */
+	/* margin: ; */
+}

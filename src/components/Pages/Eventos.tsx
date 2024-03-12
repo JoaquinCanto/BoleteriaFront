@@ -1,20 +1,17 @@
 import './Eventos.css';
 import { Evento } from "../Eventos/Evento";
-import { signOut } from 'firebase/auth';
-import { auth } from '../../helpers/firebase';
-import { useNavigate } from 'react-router-dom';
 import { useEffect, useState } from 'react';
 
+interface EventoTypes {
+	_id: string,
+	nombre: string,
+	banda: string,
+	fecha: string,
+	hora: string,
+	descripcion: string
+}
+
 export default function Eventos() {
-
-	const navigate = useNavigate();
-
-	const handleLogOut = async () => {
-		await signOut(auth);
-		localStorage.removeItem('token');
-		localStorage.removeItem('user');
-		navigate("/registrarse");
-	}
 
 	const [eventos, setEventos] = useState([]);
 
@@ -33,18 +30,23 @@ export default function Eventos() {
 		fetchEventos();
 	}, [])
 
-	// console.log(eventos);
+	const renderEventos = eventos.map((evento: EventoTypes) => {
+		return (
+			<Evento
+				key={evento._id}
+				_id={evento._id}
+				nombre={evento.nombre}
+				banda={evento.banda}
+				fecha={evento.fecha}
+				hora={evento.hora}
+				descripcion={evento.descripcion}
+			/>
+		)
+	})
+
 	return (
 		<div className="eventos">
-			{eventos.map(evento => {
-				return (
-					<Evento key={evento._id} nombre={evento.nombre} banda={evento.banda} fecha={evento.fecha} hora={evento.hora} descripcion={evento.descripcion} />
-				)
-			})}
-
-			<div>
-				<button onClick={handleLogOut}>Log out</button>
-			</div>
+			{renderEventos}
 		</div>
 	)
 }

@@ -1,11 +1,19 @@
-import './Pages.css'
-import { useEffect, useState } from "react"
+import './Pages.css';
+import { useEffect, useState } from "react";
 import ModalAgregar from "../Modal/ModalAgregar";
 import EventoRenglon from "../Eventos/EventoRenglon";
 
+interface evento {
+	_id: string,
+	nombre: string,
+	banda: string,
+	fecha: string,
+	hora: string,
+	descripcion: string,
+}
 export default function Recitales() {
 	const [showModal, setShowModal] = useState(false);
-	const [eventos, setEventos] = useState([]);
+	const [eventos, setEventos] = useState<evento[]>([]);
 
 	function toggleShowModal() {
 		setShowModal(!showModal);
@@ -31,43 +39,25 @@ export default function Recitales() {
 	}
 
 	return (
-		<div>
-			<h2>Recitales</h2>
-			{/* <table>
-				<thead>
-					<tr>
-						<th>Nombre</th>
-						<th>Banda</th>
-						<th>Fecha</th>
-						<th>Hora</th>
-						<th>Descripción</th>
-					</tr>
-				</thead>
-				<tbody>
-					{eventos.map(evento => (
-						<tr key={evento._id}>
-							onClick={handleRowClick(evento._id)}>
-							<td>{evento.nombre}</td>
-							<td>{evento.banda}</td>
-							<td>{evento.fecha}</td>
-							<td>{evento.hora}</td>
-							<td>{evento.descripcion}</td>
-						</tr>
-					))}
-				</tbody>
-			</table>
+		<div className='pagRecitales'>
+			<div className='recitalesTitulo'>
+				<h2>Recitales</h2>
+				<button className="btnAgregar" onClick={agregar}>➕</button>
+			</div>
+			{showModal && <ModalAgregar onClose={toggleShowModal} trigger={fetchEventos} />}
 
-			
-			<button onClick={consultar}>Consultar</button>
-			<button onClick={modificar}>Modificar</button>
-			<button onClick={elminar}>Eliminar</button> */}
+			<div className="headerRenglon">
+				<div className="headerNombre">Nombre</div>
+				<div className="headerBanda">Banda</div>
+				<div className="headerFecha">Fecha</div>
+				<div className="headerHora">Hora</div>
+				<div className="headerDescripcion">Descripción</div>
+				<div className='headerAcciones'>Acciones</div>
+			</div>
+
 			{eventos.map(evento => (
 				<EventoRenglon key={evento._id} id={evento._id} nombre={evento.nombre} banda={evento.banda} fecha={evento.fecha} hora={evento.hora} descripcion={evento.descripcion} trigger={fetchEventos} />
 			))}
-
-			<button className="btnAgregar" onClick={agregar}>➕</button>
-			{showModal && <ModalAgregar onClose={toggleShowModal} trigger={fetchEventos} />}
-
 		</div>
 	)
 }

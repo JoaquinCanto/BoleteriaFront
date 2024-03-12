@@ -1,0 +1,65 @@
+/* .renglon {
+	display: flex;
+	flex-direction: column;
+	border-collapse: collapse;
+} */
+.pagRecitales {
+	width: 100%;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+}
+
+.recitalesTitulo {
+	width: 20rem;
+	display: flex;
+	flex-direction: row;
+	justify-content: center;
+	align-items: center;
+	gap: 2rem;
+}
+
+.headerRenglon {
+	display: flex;
+	flex-direction: row;
+	/* margin-right: 6.431rem; */
+	font-weight: 700;
+
+}
+
+.btnAgregar {
+	display: flex;
+	/* margin: 1rem; */
+}
+
+.headerNombre {
+	min-width: 13.125rem;
+	padding: 0.25rem;
+}
+
+.headerBanda {
+	min-width: 10.125rem;
+	padding: 0.25rem;
+}
+
+.headerFecha {
+	min-width: 6.125rem;
+	padding: 0.25rem;
+}
+
+.headerHora {
+	min-width: 3.125rem;
+	padding: 0.25rem;
+}
+
+.headerDescripcion {
+	min-width: 25.125rem;
+	padding: 0.25rem;
+}
+
+.headerAcciones {
+	min-width: 6.431rem;
+	padding: 0.25rem 0rem;
+	margin-left: 0.25rem;
+}

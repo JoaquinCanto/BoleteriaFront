@@ -7,42 +7,58 @@
 
 }
 
-.nombre,
-.banda,
-.fecha,
-.hora,
-.descripcion {
+.renglonNombre,
+.renglonBanda,
+.renglonFecha,
+.renglonHora,
+.renglonDescripcion {
 	display: flex;
 	align-items: center;
 	padding: 0.25rem;
 	border: 0.0625rem solid #ffffff;
 	border-collapse: collapse;
+	background-color: #3d3838;
 }
 
-.nombre {
+.renglonNombre {
 	min-width: 13rem;
-	background-color: blue;
+	/* background-color: blue; */
 }
 
-.banda {
+.renglonBanda {
 	min-width: 10rem;
-	background-color: red;
+	/* background-color: red; */
 }
 
-.fecha {
+.renglonFecha {
 	min-width: 6rem;
 	justify-content: center;
-	background-color: green;
+	/* background-color: green; */
 }
 
-.hora {
+.renglonHora {
 	min-width: 3rem;
 	justify-content: center;
-	background-color: violet;
+	/* background-color: violet; */
 }
 
-.descripcion {
+.renglonDescripcion {
 	min-width: 25rem;
-	background-color: orange;
-	flex-wrap: wrap;
+	max-width: 25rem;
+	/* background-color: orange; */
+}
+
+.botones {
+	display: flex;
+	flex-direction: row;
+	justify-content: center;
+	align-items: center;
+	gap: 0.25rem;
+	margin-left: 0.25rem;
+	/* border: 0.0625rem solid #ffffff; */
+}
+
+.btn {
+	/* display: flex; */
+	/* margin: ; */
 }

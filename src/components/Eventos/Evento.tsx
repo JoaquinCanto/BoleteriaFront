@@ -1,14 +1,31 @@
 import './Evento.css'
+import { useNavigate } from 'react-router-dom';
+
 
 interface propTypes {
+	_id: string,
 	nombre: string,
 	banda: string,
 	fecha: string,
 	hora: string,
-	descripcion: string
+	descripcion: string,
+
 }
 
 export function Evento(props: propTypes) {
+	const navigate = useNavigate();
+
+	function handleReservas() {
+		const token = localStorage.getItem('token');
+
+		if (token) {
+			localStorage.setItem('eventId', props._id)
+			navigate('/reservas');
+		} else {
+			navigate('/registrarse');
+		}
+	}
+
 	return (
 		<div className="evento">
 			<div className="eventoText">
@@ -20,7 +37,7 @@ export function Evento(props: propTypes) {
 				</div>
 				<div>{props.descripcion}</div>
 			</div>
-			<img className="imgRecital" src="" alt="Imagen Recital" />
+			<button onClick={handleReservas}>Reservar Entradas</button>
 		</div>
 	)
 }

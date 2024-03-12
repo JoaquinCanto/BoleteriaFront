@@ -1,6 +1,5 @@
 import './EventoRenglon.css'
 import { useEffect, useState } from 'react';
-import Modal from '../Modal/ModalAgregar';
 import ModalConsulta from '../Modal/ModalConsulta';
 import ModalModificar from '../Modal/ModalModificar';
 import ModalEliminar from '../Modal/ModalEliminar';
@@ -69,20 +68,22 @@ export default function EventoRenglon(props: RenglonData) {
 	// console.log(props.fecha, typeof props.fecha)
 	return (
 		<div className="renglon">
-			<div className="nombre">{props.nombre}</div>
-			<div className="banda">{props.banda}</div>
-			<div className="fecha">{props.fecha}</div>
-			<div className="hora">{props.hora}</div>
-			<div className="descripcion">{props.descripcion}</div>
+			<div className="renglonNombre">{props.nombre}</div>
+			<div className="renglonBanda">{props.banda}</div>
+			<div className="renglonFecha">{props.fecha}</div>
+			<div className="renglonHora">{props.hora}</div>
+			<div className="renglonDescripcion">{props.descripcion}</div>
 
-			<div className=""><button onClick={toggleConsutla}>🔍</button></div>
-			{consulta && <ModalConsulta onClose={toggleConsutla} data={props} />}
+			<div className='botones'>
+				<button className="btn" onClick={toggleConsutla}>🔍</button>
+				{consulta && <ModalConsulta onClose={toggleConsutla} data={props} />}
 
-			<div className=""><button onClick={toggleModifica}>✏️</button></div>
-			{modifica && <ModalModificar onClose={toggleModifica} data={props} trigger={props.trigger} />}
+				<button className="btn" onClick={toggleModifica}>✏️</button>
+				{modifica && <ModalModificar onClose={toggleModifica} data={props} trigger={props.trigger} />}
 
-			<div className=""><button onClick={toggleElimina}>🗑️</button></div>
-			{elimina && <ModalEliminar onClose={toggleElimina} data={props} trigger={props.trigger} />}
+				<button className="btn" onClick={toggleElimina}>🗑️</button>
+				{elimina && <ModalEliminar onClose={toggleElimina} data={props} trigger={props.trigger} />}
+			</div>
 		</div>
 	)
 }

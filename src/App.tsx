@@ -13,6 +13,8 @@ import Soporte from './components/Soporte/Soporte'
 import LogIn from './components/Usuarios/LogIn'
 import Register from './components/Usuarios/Register'
 import Usuario from './components/Usuarios/Usuario'
+
+import Reserva from './components/Pages/Reserva'
 import Recitales from './components/Pages/Recitales'
 import Reservas from './components/Pages/Reservas'
 import Logout from './components/Pages/Logout'

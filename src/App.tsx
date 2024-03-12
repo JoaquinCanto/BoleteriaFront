@@ -13,6 +13,9 @@ import Soporte from './components/Soporte/Soporte'
 import LogIn from './components/Usuarios/LogIn'
 import Register from './components/Usuarios/Register'
 import Usuario from './components/Usuarios/Usuario'
+import Reserva from './components/Pages/Reserva'
+
+
 
 
 function App() {
@@ -22,6 +25,7 @@ function App() {
 			<Routes>
 				<Route element={<Layout/>}>
 					<Route path='/' element={<Eventos/>} />
+					<Route path='/reserva' element={<Reserva/>} />
 					<Route path='/not' element={<NotLanding/>} />
 
 					<Route path='/sedes/gigante' element={<Gigante/>} />

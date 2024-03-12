@@ -1,0 +1,48 @@
+.renglon {
+	width: 100%;
+	display: flex;
+	flex-direction: row;
+	justify-content: center;
+	align-items: center;
+
+}
+
+.nombre,
+.banda,
+.fecha,
+.hora,
+.descripcion {
+	display: flex;
+	align-items: center;
+	padding: 0.25rem;
+	border: 0.0625rem solid #ffffff;
+	border-collapse: collapse;
+}
+
+.nombre {
+	min-width: 13rem;
+	background-color: blue;
+}
+
+.banda {
+	min-width: 10rem;
+	background-color: red;
+}
+
+.fecha {
+	min-width: 6rem;
+	justify-content: center;
+	background-color: green;
+}
+
+.hora {
+	min-width: 3rem;
+	justify-content: center;
+	background-color: violet;
+}
+
+.descripcion {
+	min-width: 25rem;
+	background-color: orange;
+	flex-wrap: wrap;
+}

@@ -1,6 +1,8 @@
-import './App.css'
+import './App.css';
 import { BrowserRouter, Route, Routes } from 'react-router-dom'
 import { Layout } from './components/Pages/Layout'
+import { PrivateRoutes, PublicRoutes } from './components/Models/Routes'
+import { AuthGuard } from './components/Guards/AuthGuard'
 
 import Eventos from './components/Pages/Eventos'
 import NotLanding from './components/Pages/NotLanding'
@@ -14,7 +16,7 @@ import LogIn from './components/Usuarios/LogIn'
 import Register from './components/Usuarios/Register'
 import Usuario from './components/Usuarios/Usuario'
 import Recitales from './components/Pages/Recitales'
-import Reservas from './components/Pages/Reservas'
+// import Reservas from './components/Pages/Reservas'
 import Logout from './components/Pages/Logout'
 
 function App() {
@@ -27,19 +29,21 @@ function App() {
 						<Route path='/' element={<Eventos />} />
 						<Route path='/not' element={<NotLanding />} />
 
-						<Route path='/sedes/gigante' element={<Gigante />} />
-						<Route path='/sedes/monumental' element={<Monumental />} />
-						<Route path='/nosotros' element={<Nosotros />} />
-						<Route path='/soporte' element={<Soporte />} />
+						<Route path={PublicRoutes.GIGANTE} element={<Gigante />} />
+						<Route path={PublicRoutes.MONUMENTAL} element={<Monumental />} />
+						<Route path={PublicRoutes.NOSOTROS} element={<Nosotros />} />
+						<Route path={PublicRoutes.SOPORTE} element={<Soporte />} />
 
-						<Route path='/ingresar' element={<LogIn />} />
-						<Route path='/registrarse' element={<Register />} />
-						<Route path='/usuario' element={<Usuario />} />
+						<Route path={PublicRoutes.INGRESAR} element={<LogIn />} />
+						<Route path={PublicRoutes.REGISTRARSE} element={<Register />} />
 
-						<Route path='/recitales' element={<Recitales />} />
-						<Route path='/reservas' element={<Reservas />} />
-						<Route path='/logout' element={<Logout />} />
+						<Route element={<AuthGuard />}>
+							<Route path={PrivateRoutes.USUARIO} element={<Usuario />} />
+							<Route path={PrivateRoutes.RECITALES} element={<Recitales />} />
+							{/* <Route path={PrivateRoutes.RESERVAS} element={<Reservas />} /> */}
+							<Route path={PrivateRoutes.LOGOUT} element={<Logout />} />
 
+						</Route>
 					</Route>
 				</Routes>
 			</BrowserRouter>

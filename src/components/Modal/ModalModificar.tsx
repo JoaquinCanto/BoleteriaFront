@@ -62,6 +62,7 @@ export default function ModalModificar(props: propTypes) {
 
 	return (
 		<div className="modal">
+			<div className="overlay"></div>
 			<div className="formRecital">
 				<form onSubmit={handleSubmit(onSubmit)}>
 					<div>

@@ -41,6 +41,7 @@ export default function ModalConsulta(props: propTypes) {
 
 	return (
 		<div className="modal">
+			<div className="overlay"></div>
 			<div className="formRecital">
 				<form>
 					<div>

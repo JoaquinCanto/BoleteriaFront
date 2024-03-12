@@ -31,7 +31,7 @@ export default function ModalAgregar(props: propTypes) {
 				body: JSON.stringify(data),
 			});
 			const responseData = await response.json();
-			if (responseData.status === 200) {
+			if (responseData.status === 201) {
 				props.trigger();
 			}
 		} catch (error) {
@@ -42,6 +42,7 @@ export default function ModalAgregar(props: propTypes) {
 	}
 	return (
 		<div className="modal">
+			<div className="overlay"></div>
 			<div className="formRecital">
 				<form onSubmit={handleSubmit(onSubmit)}>
 					<div>

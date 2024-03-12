@@ -62,6 +62,7 @@ export default function ModalEliminar(props: propTypes) {
 
 	return (
 		<div className="modal">
+			<div className="overlay"></div>
 			<div className="formRecital">
 				<div>¿Desea eliminar este recital de la lista?</div>
 				<form onSubmit={handleSubmit(onSubmit)}>

@@ -45,6 +45,8 @@
 .btnLogIn {
     width: auto;
     padding: 0.3rem;
+    margin-bottom: 10px;
+    background-color: #252a8c;
 }
 
 /* .formLogIn {
@@ -55,3 +57,12 @@
     align-items: center;
     gap: 20px;
 } */
+
+.LogIn h2{
+    border-bottom: 2px solid #252a8c;
+}
+
+.registro h2{
+    border-bottom: 2px solid #252a8c;
+}
+

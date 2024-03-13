@@ -1,38 +1,49 @@
 import './Reserva.css';
-import FotoEstadio from '../../assets/ReservaMapa.png';
+import FotoMonumental from '../../assets/ReservasMonumental.png';
+import FotoCentral from'../../assets/ReservasCentral.png';
 
-// interface propTypes {
-//   titulo: string;
-//   fecha: string;
-//   // img: string;
-//   // imgClass: string;
-//   // options: string[];
-//   // panelClass: string;
-// }
+interface propTypes {
+    Nombre: string;
+    fecha: string;
+    Sede: string;
+    Zona: string;
+    Cantidad: string;
+   
+ }
 
 export default function Reserva() {
 
-
-
-
-
-
+  const sede = localStorage.getItem('eventSede');
   return (
     <div className="reserva-contenedor">
 
       <h1>{localStorage.getItem('eventNombre')}</h1>
-      <h1>{localStorage.getItem('eventFecha')}</h1>
+      <h2>{localStorage.getItem('eventFecha')}</h2>
+      <h2>{localStorage.getItem('eventSede')}</h2>
 
       <h2>Seleccione una Ubicación</h2>
-      <img className="imgMapa" src={FotoEstadio} alt="imagenEstadio" />
+      <img className="imgMapa" src={sede === 'Gigante' ? FotoCentral : FotoMonumental} alt="imagenEstadio" />
 
       <div className="combos">
         <p>Zona:</p>
         <select name="cmbZonas">
-          <option value="Zona 1">Zona Verde</option>
-          <option value="Zona 2">Zona Violeta</option>
-          <option value="Zona 3">Zona Naranja</option>
-          <option value="Zona 4">Zona Azul</option>
+          {sede === 'Gigante' ? (
+            <>
+              <option value="Zona 1">Zona Campo</option>
+              <option value="Zona 2">Zona General</option>
+              <option value="Zona 3">Zona Platea Cordiviola</option>
+              <option value="Zona 4">Zona Platea Rio</option>
+            </>
+          ) : (
+            <>
+              <option value="Zona 1">Zona Naranja</option>
+              <option value="Zona 2">Zona Rojo</option>
+              <option value="Zona 3">Zona Blanco</option>
+              <option value="Zona 4">Zona Amarillo</option>
+              <option value="Zona 5">Zona Celeste</option>
+              <option value="Zona 6">Zona Azul</option>
+            </>
+          )}
         </select>
       </div>
 

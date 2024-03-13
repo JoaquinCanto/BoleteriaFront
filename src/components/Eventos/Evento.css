@@ -41,7 +41,11 @@
 	cursor: pointer; /* Cambiado el cursor al pasar */
 }
 
+.sede{
+	color: pink;
+}
+
 .descripcion {
 	width: 100%; /* Ocupar todo el ancho disponible */
-	text-align: left; /* Alinear a la izquierda */
+	text-align: right; /* Alinear a la izquierda */
 }

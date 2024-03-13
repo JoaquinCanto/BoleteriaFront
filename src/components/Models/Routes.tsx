@@ -1,5 +1,5 @@
 export const PublicRoutes = {
-	HOME: '',
+	HOME: '/',
 
 	INGRESAR: 'ingresar',
 	REGISTRARSE: 'registrarse',

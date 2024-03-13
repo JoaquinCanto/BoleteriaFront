@@ -1,59 +1,43 @@
 import './Reserva.css';
-import FotoEstadio from '../../assets/ReservaMapa.png';
-
-// interface propTypes {
-//   titulo: string;
-//   fecha: string;
-//   // img: string;
-//   // imgClass: string;
-//   // options: string[];
-//   // panelClass: string;
-// }
+import FotoMonumental from '../../assets/ReservasMonumental.png';
+import FotoCentral from '../../assets/ReservasCentral.png';
+import ModalAgregarReserva from '../Modal/ModalAgregarReserva';
+import { useState } from 'react';
 
 export default function Reserva() {
+	const [showModal, setShowModal] = useState(false);
 
+	const sede = localStorage.getItem('eventSede');
 
+	function toggleShowModal() {
+		setShowModal(!showModal);
+	}
 
+	function reservar() {
+		toggleShowModal();
+	}
 
+	return (
+		<div className="reserva-contenedor">
 
+			<h1>{localStorage.getItem('eventNombre')}</h1>
+			<h2>{localStorage.getItem('eventFecha')}</h2>
+			<h2>{localStorage.getItem('eventSede')}</h2>
 
-  return (
-    <div className="reserva-contenedor">
+			<h2>Seleccione una Ubicación</h2>
+			<img className="imgMapa" src={sede === 'Gigante' ? FotoCentral : FotoMonumental} alt="imagenEstadio" />
 
-      <h1>{localStorage.getItem('eventNombre')}</h1>
-      <h1>{localStorage.getItem('eventFecha')}</h1>
+			{showModal && <ModalAgregarReserva
+				nombre={localStorage.getItem('eventNombre')}
+				fecha={localStorage.getItem('eventFecha')}
+				sede={localStorage.getItem('eventSede')}
+				zona={""}
+				cantidad={0}
+				idEvento={localStorage.getItem('eventId')}
+				idUsuario={localStorage.getItem('idMongo')}
+				onClose={toggleShowModal} />}
 
-      <h2>Seleccione una Ubicación</h2>
-      <img className="imgMapa" src={FotoEstadio} alt="imagenEstadio" />
-
-      <div className="combos">
-        <p>Zona:</p>
-        <select name="cmbZonas">
-          <option value="Zona 1">Zona Verde</option>
-          <option value="Zona 2">Zona Violeta</option>
-          <option value="Zona 3">Zona Naranja</option>
-          <option value="Zona 4">Zona Azul</option>
-        </select>
-      </div>
-
-      <div className="combos">
-        <p>Cantidad:</p>
-        <select name="comboCantidad">
-          <option value="1">1</option>
-          <option value="2">2</option>
-          <option value="3">3</option>
-          <option value="4">4</option>
-          <option value="5">5</option>
-          <option value="6">6</option>
-          <option value="7">7</option>
-          <option value="8">8</option>
-          <option value="9">9</option>
-          <option value="10">10</option>
-        </select>
-      </div>
-
-      <button className="btn-reservar">RESERVAR ENTRADAS</button>
-
-    </div>
-  );
+			<button className="btnReservar" onClick={reservar}>Reservar</button>
+		</div>
+	);
 }

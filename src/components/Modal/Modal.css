@@ -25,9 +25,45 @@
 	flex-direction: column;
 	justify-content: center;
 	align-items: center;
+	gap: 1rem;
 
 	padding: 1rem;
 	background-color: black;
 	border: 1px solid white;
 	z-index: 12;
+}
+
+.formRecital form {
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+	gap: 0.5rem;
+}
+
+
+.label {
+	width: 20rem;
+	display: flex;
+	justify-content: flex-start;
+	margin-bottom: 0.25rem;
+
+}
+
+.campo {
+	width: 20rem;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+
+.error {
+	width: 20rem;
+
+	display: flex;
+	margin-top: 0.25rem;
+}
+
+.hidden {
+	display: none;
 }

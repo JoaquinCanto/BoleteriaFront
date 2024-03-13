@@ -3,7 +3,8 @@
 	flex-direction: column;
 	background-color: #96969629;
 	width: 50%;
-	height: auto; /* Cambiado a auto para ajustarse al contenido */
+	height: auto;
+	/* Cambiado a auto para ajustarse al contenido */
 	border: 2px solid #5500ff;
 	border-radius: 15px;
 	margin: 10px;
@@ -13,39 +14,51 @@
 	display: flex;
 	align-items: center;
 	justify-content: space-between;
-	padding: 10px; /* Agregado espaciado interno */
+	padding: 10px;
+	/* Agregado espaciado interno */
 }
 
-.columna1{
+.columna1 {
 	text-align: left;
 }
+
 .eventoNombre {
 	font-size: xx-large;
-	margin-bottom: 5px; /* Espacio inferior */
+	margin-bottom: 5px;
+	/* Espacio inferior */
 }
-.columna2{
+
+.columna2 {
 	text-align: right;
 }
+
 .fechaHorario {
 	display: flex;
+	justify-content: flex-end;
 	gap: 10px;
-	margin-bottom: 10px; /* Espacio inferior */
+	margin-bottom: 10px;
+	/* Espacio inferior */
 }
 
 .btnReserva {
 	background-color: #5500ff;
-	width: 100%; /* Cambiado para ocupar todo el ancho disponible */
-	border: none; /* Quitado el borde */
-	border-radius: 5px; /* Redondear esquinas */
-	padding: 5px 10px; /* Agregado espaciado interno */
-	cursor: pointer; /* Cambiado el cursor al pasar */
+	width: 100%;
+	/* Cambiado para ocupar todo el ancho disponible */
+	border: none;
+	/* Quitado el borde */
+	border-radius: 5px;
+	/* Redondear esquinas */
+	padding: 5px 10px;
+	/* Agregado espaciado interno */
+	cursor: pointer;
+	/* Cambiado el cursor al pasar */
 }
 
-.sede{
-	color: pink;
-}
 
 .descripcion {
-	width: 100%; /* Ocupar todo el ancho disponible */
-	text-align: right; /* Alinear a la izquierda */
+	width: 100%;
+	display: flex;
+	/* Ocupar todo el ancho disponible */
+	justify-content: flex-end;
+	/* Alinear a la izquierda */
 }

@@ -10,7 +10,8 @@ interface propTypes {
 	hora: string,
 	sede: string,
 	descripcion: string,
-
+	reservas: number,
+	maxEntradas: number,
 }
 
 export function Evento(props: propTypes) {
@@ -23,6 +24,8 @@ export function Evento(props: propTypes) {
 		localStorage.setItem('eventFecha', props.fecha);
 		localStorage.setItem('eventHora', props.hora);
 		localStorage.setItem('eventSede', props.sede);
+		localStorage.setItem('eventReservas', props.reservas.toString())
+		localStorage.setItem('eventMaxEntradas', props.maxEntradas.toString())
 		localStorage.setItem('eventDescripcion', props.descripcion);
 		navigate('/reservas');
 

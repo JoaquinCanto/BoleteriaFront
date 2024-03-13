@@ -1,11 +1,10 @@
-import './App.css';
+import './App.css'
 import { BrowserRouter, Route, Routes } from 'react-router-dom'
 import { Layout } from './components/Pages/Layout'
 import { PrivateRoutes, PublicRoutes } from './components/Models/Routes'
 import { AuthGuard } from './components/Guards/AuthGuard'
 
 import Eventos from './components/Pages/Eventos'
-import NotLanding from './components/Pages/NotLanding'
 
 import Monumental from './components/Sedes/Monumental/Monumental'
 import Gigante from './components/Sedes/Gigante/Gigante'
@@ -23,7 +22,7 @@ import MiCuenta from './components/Pages/MiCuenta'
 import MisReservas from './components/Pages/MisReservas'
 
 import Logout from './components/Pages/Logout'
-import Reservas from './components/Pages/Reservas';
+import Reservas from './components/Pages/Reservas'
 
 function App() {
 
@@ -32,8 +31,7 @@ function App() {
 			<BrowserRouter>
 				<Routes>
 					<Route element={<Layout />}>
-						<Route path='/' element={<Eventos />} />
-						<Route path='/not' element={<NotLanding />} />
+						<Route path={PublicRoutes.HOME} element={<Eventos />} />
 
 						<Route path={PublicRoutes.GIGANTE} element={<Gigante />} />
 						<Route path={PublicRoutes.MONUMENTAL} element={<Monumental />} />
@@ -42,8 +40,6 @@ function App() {
 
 						<Route path={PublicRoutes.INGRESAR} element={<LogIn />} />
 						<Route path={PublicRoutes.REGISTRARSE} element={<Register />} />
-
-
 
 						<Route element={<AuthGuard />}>
 							<Route path={PrivateRoutes.USUARIO} element={<Usuario />} />

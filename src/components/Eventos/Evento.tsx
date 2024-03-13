@@ -8,6 +8,7 @@ interface propTypes {
 	banda: string,
 	fecha: string,
 	hora: string,
+	sede: string,
 	descripcion: string,
 
 }
@@ -21,6 +22,7 @@ export function Evento(props: propTypes) {
 		localStorage.setItem('eventBanda', props.banda);
 		localStorage.setItem('eventFecha', props.fecha);
 		localStorage.setItem('eventHora', props.hora);
+		localStorage.setItem('eventSede', props.sede);
 		localStorage.setItem('eventDescripcion', props.descripcion);
 		navigate('/reservas');
 
@@ -38,6 +40,7 @@ export function Evento(props: propTypes) {
 						<span className="Fecha">{props.fecha}</span>
 						<span className="Horario">{props.hora}</span>
 					</div>
+					<div className='sede'>{props.sede}</div>
 					<div className='descr'>{props.descripcion}</div>
 				</div>
 			</div>

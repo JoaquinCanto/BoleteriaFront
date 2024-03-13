@@ -13,6 +13,6 @@ export const PublicRoutes = {
 export const PrivateRoutes = {
 	USUARIO: 'usuario',
 	RESERVAS: 'reservas',
-	RECITALES: 'recitales',
+	RECITALES: '/recitales',
 	LOGOUT: 'logout'
 }

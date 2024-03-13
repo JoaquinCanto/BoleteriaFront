@@ -16,10 +16,10 @@ import LogIn from './components/Usuarios/LogIn'
 import Register from './components/Usuarios/Register'
 import Usuario from './components/Usuarios/Usuario'
 
-import Reserva from './components/Pages/Reserva'
+
 import Recitales from './components/Pages/Recitales'
-// import Reservas from './components/Pages/Reservas'
 import Logout from './components/Pages/Logout'
+import Reservas from './components/Pages/Reservas';
 
 function App() {
 
@@ -42,7 +42,7 @@ function App() {
 						<Route element={<AuthGuard />}>
 							<Route path={PrivateRoutes.USUARIO} element={<Usuario />} />
 							<Route path={PrivateRoutes.RECITALES} element={<Recitales />} />
-							{/* <Route path={PrivateRoutes.RESERVAS} element={<Reservas />} /> */}
+							<Route path={PrivateRoutes.RESERVAS} element={<Reservas />} />
 							<Route path={PrivateRoutes.LOGOUT} element={<Logout />} />
 
 						</Route>

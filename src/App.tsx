@@ -27,7 +27,7 @@ import Reservas from './components/Pages/Reservas';
 
 function App() {
 
-	return (	
+	return (
 		<>
 			<BrowserRouter>
 				<Routes>
@@ -44,14 +44,14 @@ function App() {
 						<Route path={PublicRoutes.REGISTRARSE} element={<Register />} />
 
 
-						<Route path='/MiCuenta' element={<MiCuenta />} />
-						<Route path='/MisReservas' element={<MisReservas />} />
 
 						<Route element={<AuthGuard />}>
 							<Route path={PrivateRoutes.USUARIO} element={<Usuario />} />
 							<Route path={PrivateRoutes.RECITALES} element={<Recitales />} />
 							<Route path={PrivateRoutes.RESERVAS} element={<Reservas />} />
 							<Route path={PrivateRoutes.LOGOUT} element={<Logout />} />
+							<Route path={PrivateRoutes.CUENTA} element={<MiCuenta />} />
+							<Route path={PrivateRoutes.MISRESERVAS} element={<MisReservas />} />
 
 						</Route>
 					</Route>

@@ -14,5 +14,7 @@ export const PrivateRoutes = {
 	USUARIO: 'usuario',
 	RESERVAS: 'reservas',
 	RECITALES: '/recitales',
-	LOGOUT: 'logout'
+	LOGOUT: 'logout',
+	CUENTA: '/micuenta',
+	MISRESERVAS: '/misreservas',
 }

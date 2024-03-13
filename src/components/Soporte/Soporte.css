@@ -5,13 +5,27 @@
     justify-content: center;
     align-items: center;
 }
+.Soporte h2{
+    border-bottom: 2px solid #252a8c;
+    text-align: center;
+}
 
-label,input,textarea{
+.Renglon{
     width: 100%;
     text-align: left;
     margin-bottom: 20px; /* Espacio entre los campos */
 }
+.Renglon input{
+    width:100%;
+}
+.Renglon textarea{
+    width: 100%;
+}
 
-.btn {
+.btnMandar {
+    width: 100%;
+    text-align: center;
     margin-top: 10px;
+    margin-bottom: 10px;
+    background-color: #252a8c;
 }

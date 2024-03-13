@@ -2,7 +2,7 @@ import { useEffect, useState } from 'react';
 import './Usuario.css'
 import { useNavigate } from 'react-router-dom';
 
-type user = {
+type User = {
 	nombre: string,
 	apellido: string,
 	fechaNacimiento: Date,
@@ -16,7 +16,7 @@ export default function Usuario() {
 	const navigate = useNavigate();
 
 	const [showRecitales, setShowRecitales] = useState<boolean>();
-	const [usuario, setUsuario] = useState<user>();
+	const [usuario, setUsuario] = useState<User>();
 	const userMongoId = localStorage.getItem('idMongo');
 
 	const token = localStorage.getItem('token');
@@ -39,8 +39,7 @@ export default function Usuario() {
 	function isAdmin() {
 		if (usuario?.admin) {
 			setShowRecitales(true);
-		}
-		else {
+		} else {
 			setShowRecitales(false);
 		}
 	}
@@ -53,8 +52,18 @@ export default function Usuario() {
 	return (
 		<div>
 			<ul>
-				<li>Cuenta</li>
-				{showRecitales && <li>Recitales</li>} {/* Solo los admins */}
+				<li className='datos-usuario'>Datos del Usuario</li>
+				{usuario && (
+					<>
+						<li className='datos-usuario'>Nombre: {usuario.nombre}</li>
+						<li className='datos-usuario'>Apellido: {usuario.apellido}</li>
+						<li className='datos-usuario'>DNI: {usuario.DNI}</li>
+						<li className='datos-usuario'>Teléfono: {usuario.tel}</li>
+						<li className='datos-usuario'>Email: {usuario.email}</li>
+						
+					</>
+				)}
+				{showRecitales && <li>Recitales</li>}
 				<li>Entradas</li>
 				<li>Reclamos</li>
 			</ul>

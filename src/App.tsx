@@ -18,12 +18,16 @@ import Usuario from './components/Usuarios/Usuario'
 
 
 import Recitales from './components/Pages/Recitales'
+
+import MiCuenta from './components/Pages/MiCuenta'
+import MisReservas from './components/Pages/MisReservas'
+
 import Logout from './components/Pages/Logout'
 import Reservas from './components/Pages/Reservas';
 
 function App() {
 
-	return (
+	return (	
 		<>
 			<BrowserRouter>
 				<Routes>
@@ -38,6 +42,10 @@ function App() {
 
 						<Route path={PublicRoutes.INGRESAR} element={<LogIn />} />
 						<Route path={PublicRoutes.REGISTRARSE} element={<Register />} />
+
+
+						<Route path='/MiCuenta' element={<MiCuenta />} />
+						<Route path='/MisReservas' element={<MisReservas />} />
 
 						<Route element={<AuthGuard />}>
 							<Route path={PrivateRoutes.USUARIO} element={<Usuario />} />

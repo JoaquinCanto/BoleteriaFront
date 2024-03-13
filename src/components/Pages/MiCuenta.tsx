@@ -34,9 +34,9 @@ export default function MiCuenta() {
 	}
 
 	return (
-		<div className="micuenta-contenedor">
+		<div className="MiCuenta">
 			<h1>Datos del Usuario</h1>
-
+			
 			<div>
 				<label>Nombre: {usuario.nombre}</label>
 			</div>

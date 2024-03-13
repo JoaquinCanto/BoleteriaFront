@@ -55,11 +55,7 @@ export default function Usuario() {
 				<li className='datos-usuario'>Datos del Usuario</li>
 				{usuario && (
 					<>
-						<li className='datos-usuario'>Nombre: {usuario.nombre}</li>
-						<li className='datos-usuario'>Apellido: {usuario.apellido}</li>
-						<li className='datos-usuario'>DNI: {usuario.DNI}</li>
-						<li className='datos-usuario'>Teléfono: {usuario.tel}</li>
-						<li className='datos-usuario'>Email: {usuario.email}</li>
+						
 						
 					</>
 				)}

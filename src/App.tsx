@@ -14,7 +14,7 @@ import LogIn from './components/Usuarios/LogIn'
 import Register from './components/Usuarios/Register'
 import Usuario from './components/Usuarios/Usuario'
 import Recitales from './components/Pages/Recitales'
-import Reservas from './components/Pages/Reservas'
+//import Reservas from './components/Pages/Reservas'
 import Logout from './components/Pages/Logout'
 
 function App() {
@@ -37,7 +37,7 @@ function App() {
 						<Route path='/usuario' element={<Usuario />} />
 
 						<Route path='/recitales' element={<Recitales />} />
-						<Route path='/reservas' element={<Reservas />} />
+						
 						<Route path='/logout' element={<Logout />} />
 
 					</Route>

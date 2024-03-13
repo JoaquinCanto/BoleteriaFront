@@ -14,12 +14,14 @@ import LogIn from './components/Usuarios/LogIn'
 import Register from './components/Usuarios/Register'
 import Usuario from './components/Usuarios/Usuario'
 import Recitales from './components/Pages/Recitales'
-import Reservas from './components/Pages/Reservas'
+// import Reservas from './components/Pages/Reservas'
+import MiCuenta from './components/Pages/MiCuenta'
+import MisReservas from './components/Pages/MisReservas'
 import Logout from './components/Pages/Logout'
 
 function App() {
 
-	return (
+	return (	
 		<>
 			<BrowserRouter>
 				<Routes>
@@ -37,7 +39,9 @@ function App() {
 						<Route path='/usuario' element={<Usuario />} />
 
 						<Route path='/recitales' element={<Recitales />} />
-						<Route path='/reservas' element={<Reservas />} />
+						{/* <Route path='/reservas' element={<Reservas />} /> */}
+						<Route path='/MiCuenta' element={<MiCuenta />} />
+						<Route path='/MisReservas' element={<MisReservas />} />
 						<Route path='/logout' element={<Logout />} />
 
 					</Route>

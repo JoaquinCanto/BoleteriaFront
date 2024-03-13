@@ -16,14 +16,14 @@ export function Evento(props: propTypes) {
 	const navigate = useNavigate();
 
 	function handleReservas() {
-		const token = localStorage.getItem('token');
+		localStorage.setItem('eventId', props._id);
+		localStorage.setItem('eventNombre', props.nombre);
+		localStorage.setItem('eventBanda', props.banda);
+		localStorage.setItem('eventFecha', props.fecha);
+		localStorage.setItem('eventHora', props.hora);
+		localStorage.setItem('eventDescripcion', props.descripcion);
+		navigate('/reservas');
 
-		if (token) {
-			localStorage.setItem('eventId', props._id)
-			navigate('/reservas');
-		} else {
-			navigate('/registrarse');
-		}
 	}
 
 	return (

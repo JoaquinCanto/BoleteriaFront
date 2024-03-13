@@ -29,15 +29,19 @@ export function Evento(props: propTypes) {
 	return (
 		<div className="evento">
 			<div className="eventoText">
-				<div className='eventoNombre' >{props.nombre}</div>
-				<div>{props.banda}</div>
-				<div className="fechaHorario">
-					<span className="Fecha">{props.fecha}</span>
-					<span className="Horario">{props.hora}</span>
+				<div className='columna1'>
+					<div className='eventoNombre' >{props.nombre}</div>
+					<div className='banda'>{props.banda}</div>
 				</div>
-				<div>{props.descripcion}</div>
+				<div className='columna2'>
+					<div className="fechaHorario">
+						<span className="Fecha">{props.fecha}</span>
+						<span className="Horario">{props.hora}</span>
+					</div>
+					<div className='descr'>{props.descripcion}</div>
+				</div>
 			</div>
-			<button onClick={handleReservas}>Reservar Entradas</button>
+			<button className='btnReserva' onClick={handleReservas}>Reservar Entradas</button>
 		</div>
 	)
 }

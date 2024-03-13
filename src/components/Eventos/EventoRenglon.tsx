@@ -4,9 +4,6 @@ import ModalConsulta from '../Modal/ModalConsulta';
 import ModalModificar from '../Modal/ModalModificar';
 import ModalEliminar from '../Modal/ModalEliminar';
 
-// interface RenglonData {
-// 	data: data,
-// };
 type RenglonData = {
 	id: string,
 	nombre: string,
@@ -23,7 +20,6 @@ export default function EventoRenglon(props: RenglonData) {
 	const [consulta, setConsulta] = useState(false);
 	const [modifica, setModifica] = useState(false);
 	const [elimina, setElimina] = useState(false);
-	// const [date, setDate] = useState<string>('');
 
 	function toggleConsutla() {
 		setConsulta(!consulta);

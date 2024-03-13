@@ -53,10 +53,25 @@
 	padding: 0.25rem;
 }
 
-.headerDescripcion {
-	min-width: 25.125rem;
+.headerSede {
+	min-width: 6.438rem;
 	padding: 0.25rem;
 }
+
+.headerReservas {
+	min-width: 7.125rem;
+	padding: 0.25rem;
+}
+
+.headerMaxEntradas {
+	min-width: 7.125rem;
+	padding: 0.25rem;
+}
+
+/* .headerDescripcion {
+	min-width: 25.125rem;
+	padding: 0.25rem;
+} */
 
 .headerAcciones {
 	min-width: 6.431rem;

@@ -10,6 +10,9 @@ interface evento {
 	fecha: string,
 	hora: string,
 	descripcion: string,
+	sede: string,
+	reservas: number,
+	maxEntradas: number,
 }
 export default function Recitales() {
 	const [showModal, setShowModal] = useState(false);
@@ -51,12 +54,26 @@ export default function Recitales() {
 				<div className="headerBanda">Banda</div>
 				<div className="headerFecha">Fecha</div>
 				<div className="headerHora">Hora</div>
-				<div className="headerDescripcion">Descripción</div>
+				{/* <div className="headerDescripcion">Descripción</div> */}
+				<div className="headerSede">Sede</div>
+				<div className="headerReservas">Reservas</div>
+				<div className="headerMaxEntradas">Max Entradas</div>
 				<div className='headerAcciones'>Acciones</div>
 			</div>
 
 			{eventos.map(evento => (
-				<EventoRenglon key={evento._id} id={evento._id} nombre={evento.nombre} banda={evento.banda} fecha={evento.fecha} hora={evento.hora} descripcion={evento.descripcion} trigger={fetchEventos} />
+				<EventoRenglon
+					key={evento._id}
+					id={evento._id}
+					nombre={evento.nombre}
+					banda={evento.banda}
+					fecha={evento.fecha}
+					hora={evento.hora}
+					descripcion={evento.descripcion}
+					sede={evento.sede}
+					reservas={evento.reservas}
+					maxEntradas={evento.maxEntradas}
+					trigger={fetchEventos} />
 			))}
 		</div>
 	)

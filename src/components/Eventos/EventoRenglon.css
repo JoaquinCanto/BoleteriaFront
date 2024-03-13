@@ -11,6 +11,9 @@
 .renglonBanda,
 .renglonFecha,
 .renglonHora,
+.renglonSede,
+.renglonReservas,
+.renglonMaxEntradas,
 .renglonDescripcion {
 	display: flex;
 	align-items: center;
@@ -42,6 +45,21 @@
 	/* background-color: violet; */
 }
 
+.renglonSede {
+	min-width: 6.313rem;
+	justify-content: center;
+}
+
+.renglonReservas {
+	min-width: 7rem;
+	justify-content: center;
+}
+
+.renglonMaxEntradas {
+	min-width: 7rem;
+	justify-content: center;
+}
+
 .renglonDescripcion {
 	min-width: 25rem;
 	max-width: 25rem;
@@ -56,9 +74,4 @@
 	gap: 0.25rem;
 	margin-left: 0.25rem;
 	/* border: 0.0625rem solid #ffffff; */
-}
-
-.btn {
-	/* display: flex; */
-	/* margin: ; */
 }

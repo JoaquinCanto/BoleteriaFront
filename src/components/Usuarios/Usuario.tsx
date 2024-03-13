@@ -43,7 +43,7 @@ export default function Usuario() {
 	}, [usuario])
 
 	return (
-		<div>
+		<div className='contenidoUsuario'>
 			<ul>
 				<li><Link to={PrivateRoutes.CUENTA}>Mi Cuenta</Link></li>
 				{showRecitales && <li><Link to={PrivateRoutes.RECITALES}>Recitales</Link></li>} {/* Solo los admins */}

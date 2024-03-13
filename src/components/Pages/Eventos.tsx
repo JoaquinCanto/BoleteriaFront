@@ -9,6 +9,9 @@ interface EventoTypes {
 	fecha: string,
 	hora: string,
 	descripcion: string
+	sede: string,
+	reservas: number,
+	maxEntradas: number,
 }
 
 export default function Eventos() {
@@ -39,6 +42,9 @@ export default function Eventos() {
 				banda={evento.banda}
 				fecha={evento.fecha}
 				hora={evento.hora}
+				sede={evento.sede}
+				reservas={evento.reservas}
+				maxEntradas={evento.maxEntradas}
 				descripcion={evento.descripcion}
 			/>
 		)

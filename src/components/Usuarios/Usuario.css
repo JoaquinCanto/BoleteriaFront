@@ -53,12 +53,12 @@
     width: 100%;
     display: flex;
     justify-content: center;
- }
+}
 
-.LogIn h2{
+.LogIn h2 {
     border-bottom: 2px solid #252a8c;
 }
 
-.registro h2{
+.registro h2 {
     border-bottom: 2px solid #252a8c;
 }

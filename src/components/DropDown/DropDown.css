@@ -1,6 +1,7 @@
-.option{
+.option {
 	padding: 0.15rem;
 }
-.option:hover{
-	background-color: #ff0000;
+
+.option:hover {
+	background-color: #5500ff;
 }

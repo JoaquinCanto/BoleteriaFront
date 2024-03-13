@@ -16,28 +16,32 @@ export function Evento(props: propTypes) {
 	const navigate = useNavigate();
 
 	function handleReservas() {
-		const token = localStorage.getItem('token');
+		localStorage.setItem('eventId', props._id);
+		localStorage.setItem('eventNombre', props.nombre);
+		localStorage.setItem('eventBanda', props.banda);
+		localStorage.setItem('eventFecha', props.fecha);
+		localStorage.setItem('eventHora', props.hora);
+		localStorage.setItem('eventDescripcion', props.descripcion);
+		navigate('/reservas');
 
-		if (token) {
-			localStorage.setItem('eventId', props._id)
-			navigate('/reservas');
-		} else {
-			navigate('/registrarse');
-		}
 	}
 
 	return (
 		<div className="evento">
 			<div className="eventoText">
-				<div className='eventoNombre' >{props.nombre}</div>
-				<div>{props.banda}</div>
-				<div className="fechaHorario">
-					<span className="Fecha">{props.fecha}</span>
-					<span className="Horario">{props.hora}</span>
+				<div className='columna1'>
+					<div className='eventoNombre' >{props.nombre}</div>
+					<div className='banda'>{props.banda}</div>
 				</div>
-				<div>{props.descripcion}</div>
+				<div className='columna2'>
+					<div className="fechaHorario">
+						<span className="Fecha">{props.fecha}</span>
+						<span className="Horario">{props.hora}</span>
+					</div>
+					<div className='descr'>{props.descripcion}</div>
+				</div>
 			</div>
-			<button onClick={handleReservas}>Reservar Entradas</button>
+			<button className='btnReserva' onClick={handleReservas}>Reservar Entradas</button>
 		</div>
 	)
 }

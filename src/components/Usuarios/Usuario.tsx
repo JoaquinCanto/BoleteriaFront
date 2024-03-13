@@ -1,6 +1,7 @@
+import './Usuario.css';
 import { useEffect, useState } from 'react';
-import './Usuario.css'
-import { useNavigate } from 'react-router-dom';
+import { Link } from 'react-router-dom';
+import { PrivateRoutes } from '../Models/Routes';
 
 type User = {
 	nombre: string,
@@ -13,17 +14,14 @@ type User = {
 };
 
 export default function Usuario() {
-	const navigate = useNavigate();
 
 	const [showRecitales, setShowRecitales] = useState<boolean>();
 	const [usuario, setUsuario] = useState<User>();
 	const userMongoId = localStorage.getItem('idMongo');
 
-	const token = localStorage.getItem('token');
-
-	if (!token) {
-		navigate('/registrarse');
-	}
+	useEffect(() => {
+		fetchUsuario();
+	}, [])
 
 	const fetchUsuario = () => {
 		fetch(`http://localhost:3000/usuarios/${userMongoId}`)
@@ -36,32 +34,21 @@ export default function Usuario() {
 			});
 	}
 
-	function isAdmin() {
+	useEffect(() => {
 		if (usuario?.admin) {
 			setShowRecitales(true);
 		} else {
 			setShowRecitales(false);
 		}
-	}
-
-	useEffect(() => {
-		fetchUsuario();
-		isAdmin();
-	}, [])
+	}, [usuario])
 
 	return (
 		<div>
 			<ul>
-				<li className='datos-usuario'>Datos del Usuario</li>
-				{usuario && (
-					<>
-						
-						
-					</>
-				)}
-				{showRecitales && <li>Recitales</li>}
-				<li>Entradas</li>
-				<li>Reclamos</li>
+				<li><Link to={PrivateRoutes.CUENTA}>Mi Cuenta</Link></li>
+				{showRecitales && <li><Link to={PrivateRoutes.RECITALES}>Recitales</Link></li>} {/* Solo los admins */}
+				<li><Link to={PrivateRoutes.MISRESERVAS}>Mis Reservas</Link></li>
+				{/* <li>Reclamos</li> */}
 			</ul>
 		</div>
 	)

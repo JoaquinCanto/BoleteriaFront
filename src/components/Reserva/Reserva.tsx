@@ -7,7 +7,11 @@ import { useState } from 'react';
 export default function Reserva() {
 	const [showModal, setShowModal] = useState(false);
 
-	const sede = localStorage.getItem('eventSede');
+	const nombre = localStorage.getItem('eventNombre') || "";
+	const fecha = localStorage.getItem('eventFecha') || "";
+	const sede = localStorage.getItem('eventSede') || "";
+	const idEvento = localStorage.getItem('eventId') || "";
+	const idUsuario = localStorage.getItem('idMongo') || "";
 
 	function toggleShowModal() {
 		setShowModal(!showModal);
@@ -20,21 +24,21 @@ export default function Reserva() {
 	return (
 		<div className="reserva-contenedor">
 
-			<h1>{localStorage.getItem('eventNombre')}</h1>
-			<h2>{localStorage.getItem('eventFecha')}</h2>
-			<h2>{localStorage.getItem('eventSede')}</h2>
+			<h1>{nombre}</h1>
+			<h2>{fecha}</h2>
+			<h2>{sede}</h2>
 
 			<h2>Seleccione una Ubicación</h2>
 			<img className="imgMapa" src={sede === 'Gigante' ? FotoCentral : FotoMonumental} alt="imagenEstadio" />
 
 			{showModal && <ModalAgregarReserva
-				nombre={localStorage.getItem('eventNombre')}
-				fecha={localStorage.getItem('eventFecha')}
-				sede={localStorage.getItem('eventSede')}
+				nombre={nombre}
+				fecha={fecha}
+				sede={sede}
 				zona={""}
 				cantidad={0}
-				idEvento={localStorage.getItem('eventId')}
-				idUsuario={localStorage.getItem('idMongo')}
+				idEvento={idEvento}
+				idUsuario={idUsuario}
 				onClose={toggleShowModal} />}
 
 			<button className="btnReservar" onClick={reservar}>Reservar</button>

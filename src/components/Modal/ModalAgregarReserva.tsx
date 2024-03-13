@@ -10,6 +10,8 @@ interface propTypes {
 	sede: string;
 	zona: string;
 	cantidad: number;
+	idEvento: string;
+	idUsuario: string;
 	onClose: () => void,
 	// trigger: () => void,
 };
@@ -60,7 +62,7 @@ export default function ModalAgregar(props: propTypes) {
 		} catch (error) {
 			console.error('Error submitting form:', error);
 		}
-		// navigate(PrivateRoutes.MISRESERVAS);
+		navigate(PrivateRoutes.MISRESERVAS);
 
 	}
 	return (
